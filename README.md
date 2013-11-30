@@ -6,7 +6,7 @@ Simple, older and non-complete C++ simulation library as a school project for FI
 
 Example
 -------
-
+```cpp
 	#include <cstdlib>
 	#include <iostream>
 	#include <fstream>
@@ -88,3 +88,4 @@ Example
 	}
 
 
+```
