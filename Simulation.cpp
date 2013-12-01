@@ -70,6 +70,7 @@ namespace IMSim {
 		this->start = 0.0;
 		this->end = 0.0;
 		this->outputFlags = Simulation::OUTPUT_STANDARD;
+		this->phase = Simulation::PHASE_INIT;
 		
 		this->reset();
 	}

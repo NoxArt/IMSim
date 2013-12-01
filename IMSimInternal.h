@@ -73,7 +73,7 @@ typedef double PRECISION;
 typedef unsigned long SEED;
 #define SEED_MAX ULONG_MAX
 typedef double RANDOM;
-typedef void (IMSim::Event::*ACTION_CALLBACK)();
+typedef void (IMSim::Event::*ACTION_CALLBACK)(void* data);
 typedef unsigned long INSTRUCTION;
 typedef double BLOCK_VALUE;
 

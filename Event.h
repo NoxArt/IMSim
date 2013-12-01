@@ -35,7 +35,7 @@ namespace IMSim {
 			
 			
 		protected:
-			void _schedule(TIME from, TIME interval = 0, PRIORITY priority = 0, bool omnipresent = false, ACTION_CALLBACK callback = NULL);
+			void _schedule(TIME from, TIME interval = 0, PRIORITY priority = 0, bool omnipresent = false, ACTION_CALLBACK callback = NULL, void* data = NULL);
 			
 			ConditionsContainer* getConditionsContainer();
 			BlockContainer* getBlockContainer();

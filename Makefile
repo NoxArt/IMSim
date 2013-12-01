@@ -5,13 +5,13 @@ ifeq ($(OS),Windows_NT)
     RM = rm -rf
     PATH_SEP = /
     FILENAME = lib$(NAME).a
-    CFLAGS_LIBRARY = $(CFLAGS_DEBUG) -shared -Wl,-enable-auto-import
+    CFLAGS_LIBRARY = $(CFLAGS_RELEASE) -shared -Wl,-enable-auto-import
 # Pinguin
 else
     RM = rm -rf
     PATH_SEP = /
     FILENAME = lib$(NAME).a
-    CFLAGS_LIBRARY = $(CFLAGS_DEBUG) -shared
+    CFLAGS_LIBRARY = $(CFLAGS_RELEASE) -shared
 endif
 
 CC = g++
@@ -52,7 +52,7 @@ all: $(OBJECTS)
 $(NAME): $(OBJECTS)
 
 %.o: %.cpp
-	$(CC) $(CFLAGS_DEBUG) -fPIC -c $^ -o $@
+	$(CC) $(CFLAGS_RELEASE) -c $^ -o $@
 
 clean:
 	$(RM) $(GARBAGE)

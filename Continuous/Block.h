@@ -67,10 +67,10 @@ namespace IMSim {
 		public:
 			BlockStrategy();
 			
-			virtual BLOCK_VALUE value(Block* block, TIME time) = 0;
+			virtual BLOCK_VALUE value(Block*, TIME) = 0;
 			
-			virtual void saveState(TIME time) {};
-			virtual void restoreState(TIME time) {};
+			virtual void saveState(TIME) {};
+			virtual void restoreState(TIME) {};
 			
 	};
 	

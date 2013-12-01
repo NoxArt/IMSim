@@ -1,5 +1,6 @@
 #include <stdexcept>
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "Event.h"
 #include "Calendar.h"
@@ -43,8 +44,8 @@ namespace IMSim {
 		this->_schedule(from, interval, priority);
 	}
 	
-	void Event::_schedule(TIME at, TIME interval, PRIORITY priority, bool omnipresent, ACTION_CALLBACK callback) {
-		this->getSimulation()->getCalendar()->schedule(new Action(this, callback, interval), at, priority, omnipresent);
+	void Event::_schedule(TIME at, TIME interval, PRIORITY priority, bool omnipresent, ACTION_CALLBACK callback, void* data) {
+		this->getSimulation()->getCalendar()->schedule(new Action(this, callback, interval, data), at, priority, omnipresent);
 	}
 	
 	

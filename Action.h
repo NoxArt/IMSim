@@ -17,6 +17,7 @@ namespace IMSim {
 	class Action {
 		public:
 			Action(Event *event, ACTION_CALLBACK callback = NULL, TIME interval = 0);
+			Action(Event *event, ACTION_CALLBACK callback = NULL, TIME interval = 0, void* data = NULL);
 			
 			Action* execute();
 			
@@ -28,6 +29,7 @@ namespace IMSim {
 			Event* event;
 			ACTION_CALLBACK callback;
 			TIME interval;
+			void* data;
 			
 	};
 

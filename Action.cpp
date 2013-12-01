@@ -9,6 +9,14 @@ namespace IMSim {
 		this->event = event;
 		this->callback = callback;
 		this->interval = interval;
+		this->data = NULL;
+	}
+	
+	Action::Action(Event* event, ACTION_CALLBACK callback, TIME interval, void* data) {
+		this->event = event;
+		this->callback = callback;
+		this->interval = interval;
+		this->data = data;
 	}
 	
 	Action* Action::execute() {		
@@ -21,7 +29,7 @@ namespace IMSim {
 				Process *p = dynamic_cast<Process *>(this->event);
 				
 				if( p != NULL )
-					p->activate(this->callback);
+					p->activate(this->callback, this->data);
 				else
 					throw std::runtime_error("Attempt to use Event as a Process");
 			}

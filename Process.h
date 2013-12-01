@@ -14,8 +14,8 @@ namespace IMSim {
 			Process(Simulation *simulation, const char* name): Event(simulation, name) {}
 			
 			using Event::activate;
-			void activate(ACTION_CALLBACK callback);
-			void scheduleNext(TIME at, ACTION_CALLBACK callback);
+			void activate(ACTION_CALLBACK callback, void* data = NULL);
+			void scheduleNext(TIME at, ACTION_CALLBACK callback, void* data = NULL);
 			
 			void addCondition(Condition *condition, ACTION_CALLBACK callback);
 
