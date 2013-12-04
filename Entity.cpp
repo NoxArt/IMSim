@@ -6,9 +6,12 @@ namespace IMSim {
 	Entity::Entity(Simulation* simulation) {
 		this->simulation = simulation;
 		this->name = NULL;
-		this->id = simulation->getNextId();
 		
-		DEBUG(("ENTITY [ %d:%p ] created", this->id, this), this->simulation->now());
+		if( simulation != NULL ) {
+			this->id = simulation->getNextId();
+
+			DEBUG(("ENTITY [ %d:%p ] created", this->id, this), this->simulation->now());
+		}
 	}
 	
 	Entity::Entity(Simulation* simulation, const char* name) {
