@@ -109,8 +109,8 @@ namespace IMSim {
 	
 	
 	Calendar* Calendar::executeNext(TIME limit) {
-		
 		this->_it = this->actions.begin();
+		Action* action;
 		
 		// if in range (or before range -> we can schedule future events if has interval)
 		if( this->now() > limit )
@@ -141,11 +141,10 @@ namespace IMSim {
 					this->currentlyRunning = this->_map->second[i];
 					
 					// execute action
-					delete this->_map->second[i]->execute();
-
+					action = this->_map->second[i]->execute();
 
 					// schedule if has interval
-					if( this->_map->second[i]->getInterval() > 0 )
+					if( this->_map->second[i]->getInterval() > 0 ) {
 					   this->schedule(
 						   // action
 							this->_map->second[i],
@@ -156,6 +155,10 @@ namespace IMSim {
 						   // omnipresent (meaningful only on the first request anyway)
 							false
 						);
+					} else {
+						this->currentlyRunning = NULL;
+						delete action;
+					}
 				}
 				
 				/**
