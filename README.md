@@ -1,7 +1,7 @@
 IMSim
 ==================
 
-Simple, older and non-complete C++ simulation library as a school project for FIT VUT Brno.
+Simple, older and non-complete C++ simulation library as a university project for FIT VUT Brno.
 
 
 Example
